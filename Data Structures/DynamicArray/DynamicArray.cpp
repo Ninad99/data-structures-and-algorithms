@@ -5,8 +5,6 @@
  * @author Ninad Subba <ninuch7@gmail.com>
 */
 
-#include <iostream>
-
 template <typename T>
 class DynamicArray {
 private:
@@ -158,28 +156,4 @@ void DynamicArray<T>::print() {
       std::cout << this->arr[i] << "]" << std::endl;
     }
   }
-}
-
-int main() {
-  DynamicArray<int> myArray;
-
-  myArray.push(1);
-  myArray.push(2);
-  myArray.push(3);
-  myArray.push(5);
-  myArray.push(6);
-  myArray.push(7);
-  myArray.print();
-
-  myArray.remove(5);
-  myArray.removeAt(0);
-  myArray.print();
-
-  myArray.push(1);
-  myArray.push(2);
-  myArray.push(3);
-  myArray.push(5);
-  myArray.push(6);
-  myArray.push(7);
-  myArray.print();
 }
