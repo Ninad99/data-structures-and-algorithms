@@ -3,7 +3,7 @@
  * works with primitive types
  *
  * @author Ninad Subba <ninuch7@gmail.com>
-*/
+ */
 
 template <typename T>
 class DynamicArray {

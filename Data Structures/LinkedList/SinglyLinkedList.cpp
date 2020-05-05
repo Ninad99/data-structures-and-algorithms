@@ -77,6 +77,13 @@ bool LinkedList<T>::isEmpty() {
 
 template <typename T>
 T LinkedList<T>::value_at(int index) {
+  if (index == 0) {
+    return front();
+  }
+  if (index == (length - 1)) {
+    return back();
+  }
+
   Node<T> *current = head;
   int count = 0;
 
