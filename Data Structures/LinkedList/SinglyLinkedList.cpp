@@ -50,7 +50,6 @@ public:
 
 template <typename T>
 LinkedList<T>::LinkedList() {
-  std::cout << "\nIn constructor" << std::endl;
   length = 0;
   head = NULL;
   tail = NULL;
@@ -58,9 +57,8 @@ LinkedList<T>::LinkedList() {
 
 template <typename T>
 LinkedList<T>::~LinkedList() {
-  std::cout << "\nIn destructor" << std::endl;
   Node<T> *next = NULL, *current = head;
-  while (current) {
+  while (current != NULL) {
     next = current->next;
     free(current);
     current = next;
