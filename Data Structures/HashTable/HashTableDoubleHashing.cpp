@@ -1,5 +1,5 @@
 /** A hash table implementation with open addressing
-  * collision handling using quadratic probing
+  * collision handling using double hashing
   *
   * @author Ninad Subba <ninuch7@gmail.com>
   */
