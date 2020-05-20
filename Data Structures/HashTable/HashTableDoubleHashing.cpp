@@ -85,14 +85,14 @@ private:
   void adjustCapacity(); // adjusts the capacity value for the hash table
   void resizeTable(); // resizes the hash table with double capacity
   V updateEntry(K, V); // updates the value with the speicifed key in the hash table
-  int hashFunc(int);
-  int hashFunc(char);
-  int hashFunc(const char*);
-  int hashFunc2(int);
-  int hashFunc2(char);
-  int hashFunc2(const char*);
-  bool isPrime(int);
-  int findNextPrime(int);
+  int hashFunc(int); // returns the hash for a given key
+  int hashFunc(char); // returns the hash for a given key
+  int hashFunc(const char*); // returns the hash for a given key
+  int hashFunc2(int); // returns the hash for a given key
+  int hashFunc2(char); // returns the hash for a given key
+  int hashFunc2(const char*); // returns the hash for a given key
+  bool isPrime(int); // checks if a given number is a prime
+  int findNextPrime(int); // finds next prime greater than the given number
 
 public:
   HashTableDoubleHashing();
@@ -226,7 +226,7 @@ void HashTableDoubleHashing<K, V>::resizeTable() {
   // keep the old capacity value
   int oldCapacity = capacity;
 
-  adjustCapacity(); // table capacity should be kept as a power of 2
+  adjustCapacity(); // table capacity should be a prime number
   // reset the counts
   usedBuckets = keysCount = 0;
   threshold = (int)capacity * loadFactor;
