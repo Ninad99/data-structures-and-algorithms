@@ -120,6 +120,7 @@ void FenwickTree::set(int i, long value) {
 }
 
 void FenwickTree::print() {
+  std::cout << "\n[";
   for (int i = 1; i < n; i++) {
     std::cout << tree[i] << " ";
   }
