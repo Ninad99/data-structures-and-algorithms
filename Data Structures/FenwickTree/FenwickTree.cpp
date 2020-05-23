@@ -41,9 +41,6 @@ FenwickTree::FenwickTree(const int *arr, int size) {
   for (int i = 1; i < n; i++) {
     tree[i] = (long)arr[i - 1];
   }
-  for (int i = 1; i < n; i++) {
-    std::cout << tree[i] << " ";
-  }
 
   for (int i = 1; i < n; i++) {
     int parent = i + lsbValue(i);
