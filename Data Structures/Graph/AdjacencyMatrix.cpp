@@ -40,9 +40,9 @@ Graph::getEdgesCount() {
 }
 
 void Graph::addEdge(int src, int dest) {
-  E = E + 1;
   if (src < 0 || dest < 0 || src > V || dest > V)
     return;
+  E = E + 1;
   adj[src][dest] = 1;
 }
 
@@ -53,17 +53,4 @@ void Graph::printGraph() {
     }
     cout << "\n";
   }
-}
-
-int main() {
-  Graph g(4);
-  g.addEdge(0, 1);
-  g.addEdge(0, 2);
-  g.addEdge(1, 2);
-  g.addEdge(2, 0);
-  g.addEdge(2, 1);
-  g.addEdge(2, 3);
-  g.printGraph();
-  cout << "\nNumber of vertices: " << g.getVerticesCount() << endl;
-  cout << "\nNumber of edges: " << g.getEdgesCount() << endl;
 }
