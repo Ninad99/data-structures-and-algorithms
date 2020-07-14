@@ -59,4 +59,5 @@ int main() {
   printGraph(graph);
   vector<int> visited(n, false);
   dfs(0, graph.size(), graph, visited);
+  return 0;
 }
