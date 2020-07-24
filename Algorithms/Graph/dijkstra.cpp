@@ -59,7 +59,7 @@ vector<int> findShortestPath(vector<vector<Edge> > g, int n, int start, int end)
   if (dist[end] == INT32_MAX)
     return path;
 
-  for (int at = end; prev[at] != -1; at = prev[at]) {
+  for (int at = end; at != -1; at = prev[at]) {
     path.push_back(at);
   }
   reverse(path.begin(), path.end());
@@ -87,7 +87,7 @@ int main() {
 
   vector<int> path = findShortestPath(graph, n, 0, 4);
 
-  cout << "\nShortest Path from 0 to 4 = 0 -> ";
+  cout << "\nShortest Path from 0 to 4 = ";
   for (int i = 0; i < path.size(); i++) {
     if (i == path.size() - 1)
       cout << path[i];
