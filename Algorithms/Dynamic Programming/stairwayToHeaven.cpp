@@ -1,3 +1,9 @@
+/** Problem statement:
+  * You want to reach heaven that is at the top of the staircase. The staircase
+  * has 'n' steps, and at each step you can climb either 1 step or 2 steps further.
+  * In how many ways can you reach heaven?
+  */
+
 #include <iostream>
 #include <vector>
 

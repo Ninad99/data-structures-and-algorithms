@@ -1,3 +1,10 @@
+/** Problem statement:
+  * You are located at the top left corner of an M x N grid.
+  * You can only move either right or down at any point in time.
+  * Your home is located at the bottom right corner of this grid.
+  * In how many ways can you reach home?
+  */
+
 #include <iostream>
 #include <vector>
 
