@@ -14,38 +14,40 @@
 
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 #include <algorithm>
 
 using namespace std;
 
-vector<vector<int>> searchTriplets(vector<int>& arr) {
-  vector<vector<int>> triplets;
-  sort(arr.begin(), arr.end());
-  int n = arr.size(), left, right, sum;
-  for (int i = 0; i < n - 2; i++) {
-    if (arr[i] == arr[i + 1]) continue;
-    left = i + 1;
-    right = n - 1;
+void searchPair(vector<int>& nums, int targetSum, int left, vector<vector<int>>& result) {
+    int right = nums.size() - 1, sum;
     while (left < right) {
-      sum = arr[left] + arr[right];
-
-      if (sum == (-arr[i])) {
-        triplets.push_back({ arr[i], arr[left], arr[right] });
+      sum = nums[left] + nums[right];
+      if (sum == targetSum) {
+        result.push_back({ -targetSum, nums[left], nums[right] });
+        left++; right--;
+        while (left < right && nums[left] == nums[left - 1]) left++;
+          while (left < right && nums[right] == nums[right + 1]) right--;
+      } else if (sum < targetSum){
         left++;
+      } else {
         right--;
-        while (left < right && arr[left] == arr[left - 1])
-          left++;
-        while (right > left && arr[right] == arr[right + 1])
-          right--;
       }
-      else if (sum < (-arr[i]))
-        left += 1;
-      else if (sum > (-arr[i]))
-        right -= 1;
     }
   }
 
-  return triplets;
+vector<vector<int>> searchTriplets(vector<int>& nums) {
+  sort(nums.begin(), nums.end());
+  vector<vector<int>> result;
+  unordered_map<int, bool> numbers;
+  int n = nums.size(), left, right, sum;
+  for (int i = 0; i < n - 2; i++) {
+      if (i > 0 && nums[i] == nums[i - 1]) continue;
+
+      searchPair(nums, -nums[i], i + 1, result);
+  }
+
+  return result;
 }
 
 void print(vector<vector<int>>& arr) {
